@@ -1,0 +1,173 @@
+<!--This is one of my initial projects based on my freecodecamp certification projects.
+It contains a food order website where you can play a game while you wait for your order 
+and check the weather at the same time.
+My git hub account link is https://github.com/Triquetra003/-->
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+ <head>
+  <title>Order Food Online</title>
+  <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, 
+                   initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/eb515ae876.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="food-order.css">
+ </head>
+    
+ <body>
+    <div id="nav-bar">
+        <h1 id="logo" style="font-size:4.5vw">FooMart</h1>
+        <div id="sidebar-menu">
+            <a href="#search">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#order">Place Order</a>
+        </div>
+    </div>
+    <div id="main">
+        <div id="search">
+            <input id="input" type="text" placeholder="Search for a dish here...">
+            <button id="search-btn"><i class="fa-solid fa-search"></i></button>
+            <div id="weather">
+                <p id="date-area" style><span id="day"></span>-<span id="month"></span>-<span id="dated"> </span></p>
+                <div id="weather-main">
+                    <span id="weather-icon"></span>
+                   <span id="temp"></span>
+                    <span id="search-area" style="margin-right:3%;margin-left:3%;">
+                      <input id="search-text" style='padding:1%;' placeholder="enter city name"></input>
+                      <span id="search-icon"><i style='width:1%; ' class="fa-solid fa-search"></i></span>
+                   </span>
+                </div>
+            </div>
+        </div>
+        <div id="categories">
+            <h1>Most Ordered Meals</h1>
+            <div id="images">
+             <table>
+              <th><img src="sandwich.jpeg"><figcaption><a href="#Sandwich">Sandwich</a></figcaption></img></th>
+              <th><img src="chicken.jpg"><figcaption><a href="#Chicken">Chicken</a></figcaption></img></th>
+              <th><img src="pizza.jpeg"><figcaption><a href="#Pizza">Pizza</a></figcaption></img></th>
+              <th><img src="burger.jpeg"><figcaption><a href="#Burger">Burger</a></figcaption></img></th>
+             </table>
+            </div>
+        </div>
+        <div id="Dishes">
+            <h1>Order Your Favourite Dish Online:</h1>
+            <div id="Burger">
+             <h2>Burgers</h2>
+             <table>
+                 <th><img src="burger.jpeg">Cheese<figcaption><a href="#">Add to Cart</a></figcaption></img></th>
+                 <th><img src="burger.jpeg">Veggie<figcaption><a href="#">Add to Cart</a></figcaption></img></th>
+                 <th><img src="burger.jpeg">Big Mac<figcaption><a href="#">Add to Cart</a></figcaption></img></th>
+                 <th><img src="burger.jpeg">Chicken<figcaption><a href="#">Add to Cart</a></figcaption></img></th>
+             </table>
+            </div>
+            <div id="Pizza">
+             <h2>Pizza</h2>
+             <table>
+                 <th><img src="pizza.jpeg">Thin Crust<figcaption><a href="#">Add to Cart</a></figcaption></img></th>
+                 <th><img src="pizza.jpeg">Farm House<figcaption><a href="#">Add to Cart</a></figcaption></img></th>
+                 <th><img src="pizza.jpeg">Pepperoni<figcaption><a href="#">Add to Cart</a></figcaption></img></th>
+                 <th><img src="pizza.jpeg">Chicken loaded<figcaption><a href="#">Add to Cart</a></figcaption></img></th>
+             </table>
+            </div>
+            <div id="Chicken">
+             <h2>Chicken</h2>
+             <table>
+                 <th><img src="chicken.jpg">Grilled<figcaption><a href="#">Add to Cart</a></figcaption></img></th>
+                 <th><img src="chicken.jpg">Fried<figcaption><a href="#">Add to Cart</a></figcaption></img></th>
+                 <th><img src="chicken.jpg">Popcorn<figcaption><a href="#">Add to Cart</a></figcaption></img></th>
+                 <th><img src="chicken.jpg">Chocolate<figcaption><a href="#">Add to Cart</a></figcaption></img></th>
+             </table>
+            </div>
+            <div id="Sandwich">
+                <h2>Sandwich</h2>
+                <table>
+                    <th><img src="sandwich.jpeg">Grilled Cheese<figcaption><a href="#">Add to Cart</a></figcaption></img></th>
+                    <th><img src="sandwich.jpeg">Aloo Tikki<figcaption><a href="#">Add to Cart</a></figcaption></img></th>
+                    <th><img src="sandwich.jpeg">Salami<figcaption><a href="#">Add to Cart</a></figcaption></img></th>
+                    <th><img src="sandwich.jpeg">Noodle<figcaption><a href="#">Add to Cart</a></figcaption></img></th>
+                </table>
+            </div>
+        </div>
+        <div id="order">
+            <h1>Place Order:</h1>
+            <form>
+            <!--name-->
+             <h2>Name:</h2>
+             <input required/>
+             <!--address-->
+             <span id="address">
+             <h2>Address:</h2>
+               <h3>Building/Block/House</h3><input id="address1" style=" margin-left:1%;" required/>
+               <h3>Street</h3><input />
+               <h3>City</h3><input id='city-name' required></input>
+               <h3>Pincode</h3><input required/>
+               <p style="padding:1%;"> 
+                <i class="fa-solid fa-location-dot" style="color:var(--cherryRed)"></i> 
+                <button onclick='getLocation()' style="background-color: var(--ivory);border:1px solid var(--ivory); font-size: 1rem" id="detect-location">
+                     Detect Location
+                </button>
+                <p id="result"></p>
+                </p>
+             </span>
+             <!--contact-->
+              <h2>Contact:</h2>
+              <input type="number" pattern=".{10,10}" class="input_fields" required placeholder="Phone number (+91)" style="width:20%;" />
+              <!--payment-->
+              <h2>Payment Method:</h2>
+              <input type="radio" name='payment' style="margin-top:1%;margin-left:0.5%;width:2rem;"><label>Card</label></input> 
+              <select type="radio" style="padding:1%;margin-left:1%;font-size:1vw">
+              <option>Credit</option>
+              <option>Debit</option>
+              <option>UPI</option>
+              <option>Wallet</option>
+              </select><br>
+              <input type="radio" id='cash-radio-btn' name='payment' style="margin-top:1%;margin-left:0.5%;width:2rem;"><label>Cash</label></input>
+              <!--submit-->
+              <p onclick="onSubmit()"><button id='submit-btn'  type="button" value="Place Order" >Place Order</button></p>
+            </form>
+        </div>
+        <div id="play-game">
+            <h1>Play a game while you wait for your food...</h1>
+            <section id="game">
+                <table id="game-board">
+                    <tr>
+                      <td id="1" onclick="blockClicked()"></td>
+                      <td id="2" onclick="blockClicked()"></td>
+                      <td id="3" onclick="blockClicked()"></td>
+                    </tr>
+                    <tr>
+                      <td id="4" onclick="blockClicked()"></td>
+                      <td id="5" onclick="blockClicked()"></td>
+                      <td id="6" onclick="blockClicked()"></td>
+                    </tr>
+                    <tr>
+                      <td id="7" onclick="blockClicked()"></td>
+                      <td id="8" onclick="blockClicked()"></td>
+                      <td id="9" onclick="blockClicked()"></td>
+                    </tr>
+                  </table>
+                  <span>
+                    <p id="win-display"></p>
+                    <button id="reset" onclick="reset()">Reset</button>
+                  </span>
+            </section>
+        </div>
+
+    </div>
+    <div class="footer">
+        <a href="https://github.com/Triquetra003"  style="text-align: center;color: black;"><i class="fa-brands fa-github" style="color: black;"></i>Triquetra003</a>
+    </div>
+    <script async
+src="https://maps.googleapis.com/maps/api/js?key='YOUR-API-KEY'&libraries=places&callback=initMap" async defer>
+</script>
+    <script src="food-order.js"></script>
+ </body>
+ 
+</html>
+
+
