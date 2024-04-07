@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+ <head>
+  <title>Current City Weather App</title>
+  <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, 
+                   initial-scale=1.0">
+                   <!--adding link for fontawesome.com for fonts and icons-->
+                   <script src='fontawesome.com-YOUR-LINK' crossorigin="anonymous"></script>
+                   <link rel="stylesheet" href="weatherApp.css">
+ </head>
+ 
+ <body>
+    <section id="main">
+        <div id="search-area">
+            <input id="search-text" placeholder="enter city name"></input>
+            <span id="search-icon" onclick="dateDisplay()"><i class="fa-solid fa-search"></i></span>
+        </div>
+        <div id="weather-info">
+            <p id="date-area"><span id="day"></span>  <span id="month"></span>  <span id="dated"></span></p>
+            <hr>
+            <div id="weather-icon"></div>
+            <div id="temp"></div>
+            <div id="city"></i></div>
+            <hr>
+            <div id="rows">
+              <div id="cols">
+                <div id="tab">
+                     <div id="humidity"></div>
+                </div>
+                <div id="tab">
+                     <div id="wind"></div>
+                </div>
+              </div>
+            <div id="cols">
+                <div id="tab">
+                     <div id="feels-like"></div>
+                </div>
+            </div>
+            <div id="cols">
+                <div id="tab">
+                   <div id="temp-min"></div>
+                </div>
+                <div id="tab">
+                   <div id="temp-max"></div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <script src="weatherApp.js"></script>
+ </body>
+ 
+</html>
+
+<!--fonts:: https://fonts.google.com/
+-->

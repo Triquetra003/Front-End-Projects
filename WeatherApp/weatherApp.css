@@ -1,0 +1,115 @@
+body{
+    justify-content: center;
+    justify-items: center;
+    background:linear-gradient(90deg,rgb(81, 96, 90),rgb(147, 158, 159))
+}
+#main{
+    margin-top:2%;
+    justify-content:center;
+    justify-items: center;
+    background-color: rgb(246, 247, 230);
+    padding:15px;
+    margin-left:25%;
+    margin-right:25%;
+    border-radius:10px;
+}
+#date{
+    color:black;
+    display:visible;
+}
+#search-text{
+    border-radius:20px;
+    font-size:1rem ;
+    text-align: left;
+    padding:10px;
+    width:40%;
+    height:25px;
+    margin-left:25%;
+    
+}
+#search-icon{
+  background-color:white;
+  padding:5px;
+  border-radius:50%;
+  top: -15px;
+}
+#date-area{
+    font-size:1.5em;
+    margin-left:35%;
+}
+#weather-info{
+    display:none;
+}
+#weather-icon{
+    font-size:5rem;
+    margin-left:40%;
+    color:black;
+    width:10%;
+}
+#temp{
+    font-size:3.5rem;
+    margin-left:40%;
+    color:rgb(2, 2, 88);
+}
+#city{
+    margin-left:30%;
+    font-size:2.5rem;
+    color:rgb(0, 0, 0);
+}
+#city-icon{
+    color:rgb(235, 176, 26);
+}
+#cols{
+    display:flex;
+    flex-direction:column;
+    font-size: 1.5rem;
+    width:33%;
+}
+#rows{
+    display:flex;
+    flex-direction:row;
+    padding-left: 10%;
+   
+}
+#humidity,#feels-like,#wind,#temp-min,#temp-max{
+    padding-left:10%;
+    color:black;
+}
+#humidity-icon,#wind-icon,#feels-like-icon,#temp-min-icon,#temp-max-icon{
+    color:black;
+}
+
+@media(max-width:800px){
+    #search-text{
+        width:70%;
+        margin-left:0;
+        margin-right:5%;
+    }
+
+    #tab{
+        border-bottom: 2px solid black;
+        padding-bottom:5px;
+        margin: 0-4em;
+    }
+    #rows{
+        flex-direction:column;
+        padding-left:40%;
+    }
+    #weather-icon{
+       margin-left:50%;
+    }
+    #temp{
+        font-size:3em;
+        margin-left:0px;
+        margin-top:-30%;
+    }
+    #city{
+        margin-top:10%;
+        margin-left:10%;
+    }
+    #date-area{
+    
+    margin-left:20%;
+}
+}
+
