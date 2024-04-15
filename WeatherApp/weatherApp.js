@@ -1,8 +1,10 @@
      
       //Defining All Variables And Constants
 
-      const apiKey='YOUR-API-KEY';
+      const apiKey=config.YOUR_API_KEY;
+      const apiKey2=config.YOUR_API_KEY_2;
       const apiUrl='https://api.openweathermap.org/data/2.5/weather?units=metric&q=';
+      const searchApi="https://maps.googleapis.com/maps/api/js?key="+apiKey2+"&libraries=places&callback=initMap"
       var weatherIcon=document.getElementById('weather-icon')
       var temp=document.getElementById('temp');
       var city=document.getElementById('city');
