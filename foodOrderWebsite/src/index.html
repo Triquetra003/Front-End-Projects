@@ -15,8 +15,11 @@ My git hub account link is https://github.com/Triquetra003/-->
                    initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/eb515ae876.js" crossorigin="anonymous"></script>
+
+
 <link rel="stylesheet" href="food-order.css">
  </head>
+
     
  <body>
     <div id="nav-bar">
@@ -128,7 +131,7 @@ My git hub account link is https://github.com/Triquetra003/-->
               </select><br>
               <input type="radio" id='cash-radio-btn' name='payment' style="margin-top:1%;margin-left:0.5%;width:2rem;"><label>Cash</label></input>
               <!--submit-->
-              <p onclick="onSubmit()"><button id='submit-btn'  type="button" value="Place Order" >Place Order</button></p>
+              <p onclick=onSubmit()><button id='submit-btn'  type="button" value="Place Order" >Place Order</button></p>
             </form>
         </div>
         <div id="play-game">
@@ -162,12 +165,10 @@ My git hub account link is https://github.com/Triquetra003/-->
     <div class="footer">
         <a href="https://github.com/Triquetra003"  style="text-align: center;color: black;"><i class="fa-brands fa-github" style="color: black;"></i>Triquetra003</a>
     </div>
-    <script async
-src="https://maps.googleapis.com/maps/api/js?key='YOUR-API-KEY'&libraries=places&callback=initMap" async defer>
-</script>
-    <script src="food-order.js"></script>
+    
  </body>
- 
+ <script src="food-order.js" type="module"></script>
+<script src="variables.js" type="module"></script>
 </html>
 
 

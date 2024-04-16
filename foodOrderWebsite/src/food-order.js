@@ -1,7 +1,11 @@
-//weather
-const apiKey='YOUR-API-KEY';
+
+import { API_KEY_1,API_KEY_2 } from './variables.js';
+//defining variables
+console.log("test");
+const apiKey=API_KEY_1;
+const apiKey2=API_KEY_2;
 const apiUrl='https://api.openweathermap.org/data/2.5/weather?units=metric&q=';
-const searchApi="https://maps.googleapis.com/maps/api/js?key='YOUR-API-KEY'&libraries=places&callback=initMap"
+const searchApi="https://maps.googleapis.com/maps/api/js?key="+apiKey2+"&libraries=places&callback=initMap"
 var dateArea=document.getElementById('date-area');
 var searchText=document.getElementById('search-text');
 var searchBtn=document.getElementById('search-icon');
@@ -19,7 +23,7 @@ const playGame=document.getElementById('play-game');
 const winDisplay=document.getElementById('win-display');
 
 //detect-location-function
-
+document.getElementById('detect-location').addEventListener('click',
 function getLocation() {
     console.log("getLocation Called");
     var bdcApi = "https://api.bigdatacloud.net/data/reverse-geocode-client"
@@ -39,7 +43,7 @@ function getLocation() {
             timeout: 5000,
             maximumAge: 0
         });
-}
+})
 function getApi(bdcApi) {
     Http.open("GET", bdcApi);
     Http.send();
@@ -51,17 +55,18 @@ function getApi(bdcApi) {
         }
     };
 }
-//  getLocation()
 
+document.getElementById('submit-btn').addEventListener('click',
 function onSubmit(){
   submitBtn.style.backgroundColor='red';
   submitBtn.innerHTML='Order Placed';
   playGame.style.display='block';
-}
+})
 
 //Play Game:
 
 let currPlayer = 'X';
+let winPlayer= 'default';
 let endGame = false;
 // Winning Positions in game
 let winPos=[
@@ -76,7 +81,6 @@ for(let i=1;i<=9;i++){
 document.getElementById(i.toString()).addEventListener('click',
 //adding eventListners to every td
 function(){
-
    if(this.innerHTML===''&& !endGame){
     //Display symbol of current player
     this.innerHTML=currPlayer;
@@ -94,7 +98,6 @@ function(){
 });
 }
 
-
 function checkWin() {
 for (let i = 0; i < winPos.length; i++) {
 if (
@@ -107,7 +110,8 @@ if (
   document.getElementById(winPos[i][2]).classList.add("win"); 
   endGame = true;
   setTimeout(function() {
-    winDisplay.innerHTML=winPlayer+' Wins!';
+    console.log(winPlayer)
+    document.getElementById('win-display').innerHTML=winPlayer+' Wins!';
   }, 500);
 }
 else if(document.getElementById('1').innerHTML!==''&&document.getElementById('2').innerHTML!==''&&document.getElementById('3').innerHTML!==''&&document.getElementById('4').innerHTML!==''&&document.getElementById('5').innerHTML!==''&&document.getElementById('6').innerHTML!==''&&document.getElementById('7').innerHTML!==''&&document.getElementById('8').innerHTML!==''&&document.getElementById('9').innerHTML!==''&& !endGame){
@@ -119,7 +123,7 @@ else if(document.getElementById('1').innerHTML!==''&&document.getElementById('2'
 }
 
 //Reset
-
+document.getElementById('reset').addEventListener('click',
 function reset() {
 for (let i = 1; i <= 9; i++) {
   document.getElementById(i.toString()).innerHTML = "";
@@ -129,7 +133,7 @@ for (let i = 1; i <= 9; i++) {
   endGame = false;
 }
 winDisplay.innerHTML='';
-}
+})
 
 //weather-function
 
